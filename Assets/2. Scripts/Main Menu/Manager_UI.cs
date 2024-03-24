@@ -1,17 +1,15 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class UI : MonoBehaviour
+public class Manager_UI : MonoBehaviour
 {
     #region Variables to use:
 
     // Private non-visible variables:
-    public static UI Instance;
+    public static Manager_UI Instance;
 
-    [Header("Panels: ")]
+    [Header("Panels References: ")]
     [SerializeField] private GameObject mainPanel;
     [SerializeField] private GameObject newTournamentPanel;
     [SerializeField] private GameObject oldTournamentsPanel;
