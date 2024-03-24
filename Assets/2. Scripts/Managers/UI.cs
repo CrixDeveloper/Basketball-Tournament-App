@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class UI : MonoBehaviour
@@ -41,6 +42,13 @@ public class UI : MonoBehaviour
     private IEnumerator DefaultDelay()
     {
         yield return new WaitForSeconds(2.5f);
+    }
+
+    public void NewGame()
+    {
+        StartCoroutine(DefaultDelay());
+
+        SceneManager.LoadScene("BT-MainGame");
     }
 
     public void ActivateNewTournament()
