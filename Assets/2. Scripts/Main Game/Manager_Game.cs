@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class Manager_Game : MonoBehaviour
@@ -61,12 +62,27 @@ public class Manager_Game : MonoBehaviour
         }
     }
 
+    public void ExitButton()
+    {
+        warningPanel.SetActive(true);
+        warningText.text = "Wait a moment please...";
+
+        StartCoroutine(ExitToMenu());
+    }
+
     private IEnumerator HideWarningPanel()
     {
         yield return new WaitForSeconds(3f);
 
         warningPanel.SetActive(false);
         warningText.text = "";
+    }
+
+    private IEnumerator ExitToMenu()
+    {
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("BT-MainMenu");
     }
 
     public void ResetButton()
